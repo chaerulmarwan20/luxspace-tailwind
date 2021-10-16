@@ -1,8 +1,7 @@
-import { addClass, removeClass } from "./utils-class";
+import { addClass } from "./utils-class";
 
 const modalTriggers = document.getElementsByClassName("modal-trigger");
 const modalWrapperClassNames = "fixed inset-0 bg-black opacity-35";
-
 const arrModalTriggers = Array.from(modalTriggers);
 
 arrModalTriggers.forEach((item) => {
