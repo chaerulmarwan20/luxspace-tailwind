@@ -4,14 +4,14 @@ const carouselId = document?.getElementById("carousel");
 const carouselItems = carouselId?.getElementsByClassName("flex")[0];
 const carouselContainer = carouselId?.getElementsByClassName("container")[0];
 
-function carouselCalculateOffset() {
+const carouselCalculateOffset = () => {
   const carouselOffset = carouselContainer.getBoundingClientRect().left;
 
   carouselItems.style.paddingLeft = `${carouselOffset - 16}px`;
   carouselItems.style.paddingRight = `${carouselOffset - 16}px`;
-}
+};
 
-function slide(wrapper, items) {
+const slide = (wrapper, items) => {
   let posX1 = 0,
     posX2 = 0,
     posInitial,
@@ -117,7 +117,7 @@ function slide(wrapper, items) {
   items.addEventListener("touchmove", dragAction);
 
   items.addEventListener("transitionend", checkIndex);
-}
+};
 
 if (carouselId) {
   slide(carouselId, carouselItems);
