@@ -1,8 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+a.cart svg g circle.dot {
+  @apply hidden;
+}
+
+a.cart.cart-filled svg g circle.dot {
+  @apply block;
+}
 
 @layer components {
   .overlay {
@@ -38,6 +46,42 @@
   .card:hover .card-shadow {
     @apply shadow-lg;
   }
+  ul.breadcrumb {
+    @apply flex flex-row items-center text-lg;
+  }
+  ul.breadcrumb li:not(:last-child)::after {
+    content: "/";
+    @apply px-4;
+  }
+  ul.breadcrumb li:not(:last-child) a {
+    @apply font-light;
+  }
+  ul.breadcrumb li:last-child a {
+    @apply font-semibold;
+  }
+  .slider {
+    @apply flex my-4 flex-col;
+  }
+  .slider .thumbnail {
+    @apply w-screen order-last -mx-2 overflow-auto flex pl-4;
+  }
+  .slider .thumbnail .item {
+    @apply bg-gray-100 relative rounded-lg mb-4 cursor-pointer;
+    width: 106px;
+    height: 106px;
+  }
+  .slider .thumbnail .item::after {
+    content: "";
+    @apply transition duration-200 absolute inset-0 bg-black bg-opacity-0 border-2 border-black border-opacity-0 rounded-lg;
+  }
+  .slider .thumbnail .item.selected::after {
+    content: "";
+    @apply bg-opacity-35 border-opacity-100;
+  }
+  .slider .preview {
+    @apply mb-4 px-4;
+    height: 320px;
+  }
 }
 
 @layer utilities {
@@ -59,12 +103,14 @@
     @apply w-20 h-20 -translate-x-1/2 -translate-y-1/2;
     background-size: auto;
   }
-}
-
-a.cart svg g circle.dot {
-  @apply hidden;
-}
-
-a.cart.cart-filled svg g circle.dot {
-  @apply block;
+  .slider {
+    @apply flex-row;
+  }
+  .slider .thumbnail {
+    @apply w-auto order-first block overflow-visible pl-0;
+  }
+  .slider .preview {
+    width: 560px;
+    height: 609px;
+  }
 }
