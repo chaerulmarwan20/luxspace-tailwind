@@ -107,9 +107,11 @@
               </li>
               <li class="ml-6">
                 <a
+                  id="header-cart"
                   href="cart.html"
                   class="
-                    flex-items-center
+                    flex
+                    items-center
                     justify-center
                     w-8
                     h-8
@@ -175,7 +177,7 @@
     <section class="md:py-16">
       <article class="container mx-auto px-4">
         <div class="flex -mx-4 flex-wrap">
-          <div class="w-full px-4 mb-4 md:w-8/12 md:mb-0">
+          <div class="w-full px-4 mb-4 md:w-8/12 md:mb-0" id="shopping-cart">
             <div
               class="
                 flex flex-start
@@ -212,7 +214,14 @@
                 </div>
               </div>
             </div>
-            <div class="flex flex-start flex-wrap items-center mb-4 -mx-4">
+            <p id="cart-empty" class="hidden text-center py-8">
+              Ooops... Cart is empty
+              <a href="details.html" class="underline">Shop Now!</a>
+            </p>
+            <div
+              class="flex flex-start flex-wrap items-center mb-4 -mx-4"
+              data-row="1"
+            >
               <div class="px-4 flex-none">
                 <div class="" style="width: 90px; height: 90px">
                   <img
@@ -261,13 +270,17 @@
                       px-3
                       py-1
                     "
+                    data-delete-item="1"
                   >
                     X
                   </button>
                 </div>
               </div>
             </div>
-            <div class="flex flex-start flex-wrap items-center mb-4 -mx-4">
+            <div
+              class="flex flex-start flex-wrap items-center mb-4 -mx-4"
+              data-row="2"
+            >
               <div class="px-4 flex-none">
                 <div class="" style="width: 90px; height: 90px">
                   <img
@@ -316,13 +329,17 @@
                       px-3
                       py-1
                     "
+                    data-delete-item="2"
                   >
                     X
                   </button>
                 </div>
               </div>
             </div>
-            <div class="flex flex-start flex-wrap items-center mb-4 -mx-4">
+            <div
+              class="flex flex-start flex-wrap items-center mb-4 -mx-4"
+              data-row="3"
+            >
               <div class="px-4 flex-none">
                 <div class="" style="width: 90px; height: 90px">
                   <img
@@ -371,6 +388,7 @@
                       px-3
                       py-1
                     "
+                    data-delete-item="3"
                   >
                     X
                   </button>
@@ -378,7 +396,7 @@
               </div>
             </div>
           </div>
-          <div class="w-full md:px-4 md:w-4/12">
+          <div class="w-full md:px-4 md:w-4/12" id="shipping-detail">
             <div class="bg-gray-100 px-4 py-6 md:p-8 md:rounded-3xl">
               <form action="success.html">
                 <div class="flex flex-start mb-6">
@@ -389,6 +407,7 @@
                     Complete Name</label
                   >
                   <input
+                    data-input
                     type="text"
                     id="complete-name"
                     class="
@@ -408,6 +427,7 @@
                     Email Address</label
                   >
                   <input
+                    data-input
                     type="email"
                     id="email-address"
                     class="
@@ -425,6 +445,7 @@
                 <div class="flex flex-col mb-4">
                   <label for="address" class="text-sm mb-2">Address</label>
                   <input
+                    data-input
                     type="text"
                     id="address"
                     class="
@@ -444,6 +465,7 @@
                     >Phone Number</label
                   >
                   <input
+                    data-input
                     type="tel"
                     id="phone-number"
                     class="
@@ -463,6 +485,8 @@
                   <div class="flex -mx-2 flex-wrap">
                     <div class="px-2 w-6/12 h-24 mb-4">
                       <button
+                        data-value="fedex"
+                        data-name="courier"
                         type="button"
                         class="
                           border border-gray-200
@@ -485,6 +509,8 @@
                     </div>
                     <div class="px-2 w-6/12 h-24 mb-4">
                       <button
+                        data-value="dhl"
+                        data-name="courier"
                         type="button"
                         class="
                           border border-gray-200
@@ -512,6 +538,8 @@
                   <div class="flex -mx-2 flex-wrap">
                     <div class="px-2 w-6/12 h-24 mb-4">
                       <button
+                        data-value="midtrans"
+                        data-name="payment"
                         type="button"
                         class="
                           border border-gray-200
@@ -534,6 +562,8 @@
                     </div>
                     <div class="px-2 w-6/12 h-24 mb-4">
                       <button
+                        data-value="mastercard"
+                        data-name="payment"
                         type="button"
                         class="
                           border border-gray-200
@@ -556,6 +586,8 @@
                     </div>
                     <div class="px-2 w-6/12 h-24 mb-4">
                       <button
+                        data-value="bitcoin"
+                        data-name="payment"
                         type="button"
                         class="
                           border border-gray-200
@@ -578,6 +610,8 @@
                     </div>
                     <div class="px-2 w-6/12 h-24 mb-4">
                       <button
+                        data-value="american-express"
+                        data-name="payment"
                         type="button"
                         class="
                           border border-gray-200
@@ -603,15 +637,16 @@
                 <div class="text-center">
                   <button
                     type="submit"
+                    disabled
                     class="
-                      bg-gray-300
-                      text-gray-400
-                      focus:bg-red-200 focus:outline-none
+                      bg-pink-400
+                      text-black
+                      focus:bg-black focus:outline-none
                       w-full
                       py-3
                       rounded-full
                       text-lg
-                      focus:text-black
+                      focus:text-pink-400
                       transition-all
                       duration-200
                       px-6
