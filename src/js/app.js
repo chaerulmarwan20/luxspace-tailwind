@@ -1,10 +1,6 @@
 import "../css/app.css";
-
-import "./menu-toggler";
-import "./modal";
-import "./anchor-link-smooth";
+import "./main";
 import "./carousel";
-import "./accordion";
-import "./slider";
-import "./shopping-cart";
-import "./shipping-detail";
+import "./slideshow";
+import "./shoppingCart";
+import "./shippingDetails";

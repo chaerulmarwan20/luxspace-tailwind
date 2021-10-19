@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --config configs/webpack.dev.config.js --mode=development",
     "watch": "webpack --config configs/webpack.dev.config.js --mode=development --watch",
-    "build:dev": "webpack --config configs/webpack.dev.config.js --mode=development",
-    "build:production": "webpack --config configs/webpack.prod.config.js --mode=production"
+    "build:dev": "NODE_ENV=production webpack --config configs/webpack.dev.config.js --mode=development",
+    "build:production": "NODE_ENV=production webpack --config configs/webpack.prod.config.js --mode=production"
   },
   "keywords": [],
   "author": "",
@@ -35,8 +35,5 @@
     "webpack-cli": "^4.2.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.4.0"
-  },
-  "dependencies": {
-    "full": "^1.0.1"
   }
 }
