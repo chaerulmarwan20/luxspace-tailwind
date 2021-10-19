@@ -1,3 +1,3 @@
 # LuxSpace Tailwind
 
-https://luxspace-arl.netlify.app/
+https://luxspace-tailwind-demo.netlify.app/
